@@ -1,5 +1,12 @@
 # SOEN341
 
+
+# **Project Summary:** 
+
+Creation of a Q&A website by use of Agile development.
+
+
+
 **Team Members:**
 - Ioannis Georgantas
 - Laurent Kadian
@@ -11,7 +18,6 @@
 - Laura Wheatley
 - Xiang Xie 
 
-**Project Summary:** Creation of a Q&A website by use of Agile development.
 
 **Core Features:**
 - Asking and answering questions
