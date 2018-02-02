@@ -16,7 +16,18 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
+	<script src="https://unpkg.com/wangeditor/release/wangEditor.min.js"></script>
 	
+	<style type="text/css">
+            .leave-comment .toolbar {
+                border: 0px solid #ccc;
+        }
+            .comment-form .text {
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                height: 350px
+        }
+        </style>
 </head>
 <body>
 
@@ -84,16 +95,50 @@
 
 							<div class="leave-comment">
 								<h3>Answer to the question</h3>
+								    <div id="div1" class="toolbar"></div>
 								<form class="comment-form">
 									<div class="row">
 										<div class="col-md-12">
-											<textarea placeholder="Enter your answer here"></textarea>
+											<div id="div2" class="text"></div>
 											<input type="submit" value="Add an Answer"/>
 										</div>
 
 									</div>
 								</form>
 							</div>
+							        <!-- insert editor -->
+                                                                <script type="text/javascript">
+                                                                var E = window.wangEditor
+                                    				var editor1 = new E('#div1', '#div2') 
+                                    				editor1.customConfig.zIndex = 1
+                                    				editor1.customConfig.lang = {
+         							'设置标题': 'Title',
+        							'正文': 'P',
+        							'链接文字': 'Link text',
+        							'链接': 'Link',
+        							'上传图片': 'Upload image',
+        							'上传': 'Upload',
+        							'创建': 'Init',
+        							'文字颜色': 'Text color',
+        							'背景色': 'Background color',
+        							'设置列表': 'List',
+        							'有序列表': 'Numbered list',
+        							'无序列表': 'Bulleted list',
+        							'对齐方式': 'Alignment',
+        							'靠左': 'left',
+        							'居中': 'Center',
+        							'靠右': 'Right',
+        							'网络图片': 'Image link',
+        							'插入表格': 'Insert table',
+       								'行': 'Row',
+        							'列': 'Column',
+        							'的表格': '',
+        							'插入视频': 'Insert video',
+        							'插入代码': 'Insert code',
+        							'插入': 'Insert'
+    							}
+        							editor1.create()
+    							</script>
 						</div>
 
 						<div class="col-md-3 sidebar">
