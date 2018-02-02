@@ -10,6 +10,7 @@
 - Hong Yi Wang
 - Laura Wheatley
 - Xiang Xie 
+
 **Project Summary:** Creation of a Q&A website by use of Agile development.
 
 **Core Features:**
