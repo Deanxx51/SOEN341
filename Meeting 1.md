@@ -1,4 +1,4 @@
-# Team Meeting 1 
+## Team Meeting 1 
 
 **General Information:**
 *Date:* Friday, January 26, 2018
