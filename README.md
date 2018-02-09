@@ -35,14 +35,22 @@ Creation of a Q&A website by use of Agile development.
 
 *Sprint 1: Setting up the running environment*
 - Creating a navbar with a home, login and register button
-- Creating a login model menu with its function
-- Creating a model menu for register
-- Creating the body template section in PHP
-- Creating the directory model for development
+- Creating a login modal menu with its function
+- Creating a modal menu for register
+- Creating the directory modal for development
 - General template to create new questions
 - Creating a user page
+- Plan for sprint 2
       
 *Sprint 2: Core features implementation. Setting up testing infrastructure and continuous integration infrastructure*
+- Creating a register and login backend
+- Creating the server for the project and configure user rights for www and SQL 
+- Creating hte data structure SQL
+- Implementing function of voting on the answers
+- Creating the body template section in PHP
+- Refactoring 
+- Improvement of user section
+- Setting up Travis CI 
 
 *Sprint 3: More features with user feedback*
   
