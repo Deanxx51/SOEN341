@@ -1,8 +1,0 @@
-Date: Friday, February 2nd, 2018
-Time: 12:00
-Duration 50 minutes
-
-Discussed: 
-
-1. Verify that everyone is able to commit in the repo.
-2. Create and assign new issues for the Sprint 2.
