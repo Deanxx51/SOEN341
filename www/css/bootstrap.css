@@ -849,6 +849,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  max-width: 500px;
 }
 
 .col-xs-1,
@@ -2238,14 +2239,14 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #4673f5;
+  border-color: #4673f5;
 }
 
 .btn-info {
   color: #ffffff;
-  background-color: #5bc0de;
-  border-color: #46b8da;
+  background-color: #5a5aff;
+  border-color: #5a5aff;
 }
 
 .btn-info:hover,
@@ -4431,6 +4432,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border-color: #e6e6e6;
+  background-color: #5a5aff;
 }
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
