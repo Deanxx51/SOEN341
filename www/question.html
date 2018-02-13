@@ -2,6 +2,7 @@
 
 
 <html lang="en" class="no-js">
+
 <head>
 	<title>SOEN 341 - Question</title>
 
@@ -10,25 +11,28 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,600,300' rel='stylesheet'
+	 type='text/css'>
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css" media="screen">
 	<script src="https://unpkg.com/wangeditor/release/wangEditor.min.js"></script>
-	
+
 	<style type="text/css">
-            .leave-comment .toolbar {
-                border: 0px solid #ccc;
-        }
-            .comment-form .text {
-                border-radius: 5px;
-                border: 1px solid #ccc;
-                height: 350px
-        }
-        </style>
+		.leave-comment .toolbar {
+			border: 0px solid #ccc;
+		}
+
+		.comment-form .text {
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			height: 350px
+		}
+	</style>
 </head>
+
 <body>
 
 	<!-- Container -->
@@ -40,11 +44,19 @@
 				<div class="container">
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li><a href="index.html">Home</a></li>
+							<li>
+								<a href="index.html">Home</a>
+							</li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-						  <li><a href="#" data-toggle="modal" data-target="#Register-modal"><span class="fa fa-user"></span> Sign Up</a></li>
-						  <li><a href="#" data-toggle="modal" data-target="#login-modal"><span class="fa fa-sign-in"></span> Login</a></li>
+							<li>
+								<a href="#" data-toggle="modal" data-target="#Register-modal">
+									<span class="fa fa-user"></span> Sign Up</a>
+							</li>
+							<li>
+								<a href="#" data-toggle="modal" data-target="#login-modal">
+									<span class="fa fa-sign-in"></span> Login</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -64,11 +76,18 @@
 						<div class="col-md-8 single-post">
 							<div class="single-post-content">
 								<h2>How do I add an issue in GitHub?</h2>
-								<p>This is the preview of the first 200 characters of a question, but when you click on the question you can see the whole question.</p>
+								<p>This is the preview of the first 200 characters of a question, but when you click on the question you can see the
+									whole question.</p>
 
 								<ul class="blog-tags">
-									<li><a class="autor" href="#"><i class="fa fa-user"></i> Franck851 </a></li>
-									<li><a class="date" href="#"><i class="fa fa-clock-o"></i> January 22, 2018</a></li>
+									<li>
+										<a class="autor" href="#">
+											<i class="fa fa-user"></i> Franck851 </a>
+									</li>
+									<li>
+										<a class="date" href="#">
+											<i class="fa fa-clock-o"></i> January 22, 2018</a>
+									</li>
 								</ul>
 							</div>
 
@@ -95,57 +114,57 @@
 
 							<div class="leave-comment">
 								<h3>Answer to the question</h3>
-								    <div id="div1" class="toolbar"></div>
+								<div id="div1" class="toolbar"></div>
 								<form class="comment-form">
 									<div class="row">
 										<div class="col-md-12">
 											<div id="div2" class="text"></div>
-											<input type="submit" value="Add an Answer"/>
+											<input type="submit" value="Add an Answer" />
 										</div>
 
 									</div>
 								</form>
 							</div>
-							        <!-- insert editor -->
-                                                                <script type="text/javascript">
-                                                                var E = window.wangEditor
-                                    				var editor1 = new E('#div1', '#div2') 
-                                    				editor1.customConfig.zIndex = 1
-                                    				editor1.customConfig.lang = {
-         							'设置标题': 'Title',
-        							'正文': 'P',
-        							'链接文字': 'Link text',
-        							'链接': 'Link',
-        							'上传图片': 'Upload image',
-        							'上传': 'Upload',
-        							'创建': 'Init',
-        							'文字颜色': 'Text color',
-        							'背景色': 'Background color',
-        							'设置列表': 'List',
-        							'有序列表': 'Numbered list',
-        							'无序列表': 'Bulleted list',
-        							'对齐方式': 'Alignment',
-        							'靠左': 'left',
-        							'居中': 'Center',
-        							'靠右': 'Right',
-        							'网络图片': 'Image link',
-        							'插入表格': 'Insert table',
-       								'行': 'Row',
-        							'列': 'Column',
-        							'的表格': '',
-        							'插入视频': 'Insert video',
-        							'插入代码': 'Insert code',
-        							'插入': 'Insert'
-    							}
-        							editor1.create()
-    							</script>
+							<!-- insert editor -->
+							<script type="text/javascript">
+								var E = window.wangEditor
+								var editor1 = new E('#div1', '#div2')
+								editor1.customConfig.zIndex = 1
+								editor1.customConfig.lang = {
+									'设置标题': 'Title',
+									'正文': 'P',
+									'链接文字': 'Link text',
+									'链接': 'Link',
+									'上传图片': 'Upload image',
+									'上传': 'Upload',
+									'创建': 'Init',
+									'文字颜色': 'Text color',
+									'背景色': 'Background color',
+									'设置列表': 'List',
+									'有序列表': 'Numbered list',
+									'无序列表': 'Bulleted list',
+									'对齐方式': 'Alignment',
+									'靠左': 'left',
+									'居中': 'Center',
+									'靠右': 'Right',
+									'网络图片': 'Image link',
+									'插入表格': 'Insert table',
+									'行': 'Row',
+									'列': 'Column',
+									'的表格': '',
+									'插入视频': 'Insert video',
+									'插入代码': 'Insert code',
+									'插入': 'Insert'
+								}
+								editor1.create()
+							</script>
 						</div>
 
 						<div class="col-md-3 sidebar">
 							<div class="sidebar-widgets">
 								<div class="search-widget widget">
 									<form>
-										<input type="search" placeholder="Search here..."/>
+										<input type="search" placeholder="Search here..." />
 										<button type="submit">
 											<i class="fa fa-search"></i>
 										</button>
@@ -154,40 +173,43 @@
 							</div>
 						</div>
 					</div>
-											
+
 				</div>
 			</div>
 
 		</div>
 		<!-- End content -->
-		
+
 		<!-- Container for the Login Modal -->
 		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 			<div class="modal-dialog">
 				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-						<form>
-							<input type="text" name="user" placeholder="Username">
-							<input type="password" name="pass" placeholder="Password">
-							<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-						</form>
+					<h1>Login to Your Account</h1>
+					<br>
+					<form>
+						<input type="text" name="user" placeholder="Username">
+						<input type="password" name="pass" placeholder="Password">
+						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+					</form>
 				</div>
 			</div>
 		</div>
 		<!-- End Login Container -->
-		
+
 		<!-- Container for the Register Modal -->
-		<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+		 style="display: none;">
 			<div class="modal-dialog">
 				<div class="loginmodal-container">
-					<h1>Sign Up</h1><br>
-						<form>
-							<input type="text" name="user" placeholder="Select Username">
-							<input type="text" name="user" placeholder="Name">
-							<input type="Password" name="pass" placeholder="Password">
-							<input type="Password" name="pass" placeholder="Choose Password Again">
-							<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
-						</form>
+					<h1>Sign Up</h1>
+					<br>
+					<form>
+						<input type="text" name="user" placeholder="Select Username">
+						<input type="text" name="user" placeholder="Name">
+						<input type="Password" name="pass" placeholder="Password">
+						<input type="Password" name="pass" placeholder="Choose Password Again">
+						<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
+					</form>
 				</div>
 			</div>
 		</div>
@@ -202,9 +224,10 @@
 					<div class="footer-line-in">
 						<div class="row">
 							<div class="col-md-8">
-								<p>Created by Ioannis Georgantas, Laurent Kadian, Petia Pavlova, Gurdip Singh, Razvan Soos, Francois Theroux, Hong Yi Wang, Laura Wheatley, Xiang Xie</p>
+								<p>Created by Ioannis Georgantas, Laurent Kadian, Petia Pavlova, Gurdip Singh, Razvan Soos, Francois Theroux, Hong Yi
+									Wang, Laura Wheatley, Xiang Xie</p>
 							</div>
-						</div>						
+						</div>
 					</div>
 				</div>
 			</div>
@@ -214,7 +237,9 @@
 
 		<div class="fixed-link-top">
 			<div class="container">
-				<a class="go-top" href="#"><i class="fa fa-angle-up"></i></a>
+				<a class="go-top" href="#">
+					<i class="fa fa-angle-up"></i>
+				</a>
 			</div>
 		</div>
 
@@ -227,4 +252,5 @@
 	<script type="text/javascript" src="js/script.js"></script>
 
 </body>
+
 </html>
