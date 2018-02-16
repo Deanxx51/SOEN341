@@ -82,10 +82,23 @@
 							<ul class="nav navbar-nav">
 								<li><a href="/">Home</a></li>
 							</ul>
+							{% if userLog.Username == "" %}
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}'s posts</a></li>
+								<li>
+									<a href="#" data-toggle="modal" data-target="#Register-modal">
+										<span class="fa fa-user"></span> Sign Up</a>
+								</li>
+								<li>
+									<a href="#" data-toggle="modal" data-target="#login-modal">
+										<span class="fa fa-sign-in"></span> Login</a>
+								</li>
+							</ul>
+							{% else %}
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
 								<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
 							</ul>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -138,7 +151,7 @@
 								<form class="comment-form" action="/edit_interest" method="POST">
 									<div class="row">
 										<div class="col-md-12">
-											<textarea placeholder="Enter your interests here">{{ userLog.Interest }}</textarea>
+											<textarea placeholder="Enter your interests here" name="editInterest">{{ userLog.Interest }}</textarea>
 											<input type="submit" value="Submit"/>
 										</div>
 
@@ -147,9 +160,9 @@
 							</div>
 							<div class="change-password">
 								<h2>Change of password</h2>
-								<form class="comment-form">
+								<form class="comment-form" action="/change_password" method="POST">
 									<div class="row">
-										<div class="col-md-12" action="/change_password" method="POST">
+										<div class="col-md-12">
 											Old Password: <input type="password" name="oldPassword"><br>
 											New Password: <input type="password" name="newPassword"><br>
 											<input type="submit" value="Submit"/>
@@ -160,23 +173,45 @@
 							</div>
 							
 						</div>
-						<div class="col-md-3 sidebar">
-							<div class="sidebar-widgets">
-								<div class="search-widget widget">
-									<form>
-										<input type="search" placeholder="Search here..."/>
-										<button type="submit">
-										<i class="fa fa-search"></i>
-										</button>
-									</form>
-								</div>
-							</div>
-						</div>
 					</div>
 					
 				</div>
 			</div>
 		</div>
+		<!-- Container for the Login Modal -->
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1>
+					<br>
+					<form action="/login_user" method="post">
+						<input type="text" name="userLogin" placeholder="Username">
+						<input type="password" name="passLogin" placeholder="Password">
+						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- End Login Container -->
+	
+		<!-- Container for the Register Modal -->
+		<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+		 style="display: none;">
+			<div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Sign Up</h1>
+					<br>
+					<form action="/create_user" method="post">
+						<input type="text" name="userRegister" placeholder="Select Username">
+						<input type="text" name="nameRegister" placeholder="Name">
+						<input type="Password" name="pass1Register" placeholder="Password">
+						<input type="Password" name="pass2Register" placeholder="Choose Password Again">
+						<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- End Register Container -->
 
 		<footer>
 			<div class="footer-line">

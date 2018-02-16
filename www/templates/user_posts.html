@@ -24,10 +24,23 @@
 							<ul class="nav navbar-nav">
 								<li><a href="/">Home</a></li>
 							</ul>
+							{% if userLog.Username == "" %}
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="/userpost"><span class="fa fa-user"></span> Franck851's posts</a></li>
+								<li>
+									<a href="#" data-toggle="modal" data-target="#Register-modal">
+										<span class="fa fa-user"></span> Sign Up</a>
+								</li>
+								<li>
+									<a href="#" data-toggle="modal" data-target="#login-modal">
+										<span class="fa fa-sign-in"></span> Login</a>
+								</li>
+							</ul>
+							{% else %}
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
 								<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
 							</ul>
+							{% endif %}
 						</div>
 					</div>
 				</div>
@@ -43,132 +56,61 @@
 									<h2> My posts </h2>
 								</div>
 							</div>
+
+							{% for question in questions %}
 							<div class="news-item">
 								<div class="row">
 									<div class="col-md-12">
-										<h2><a href="/question">Here is a question asked by this account</a></h2>
-										<p>This is the preview of the first 200 characters of a question, but ...</p>
+										<h2><a href="/question?title={{ question.Title }}">{{ question.Title }}</a></h2>
+										<p>{{ question.Question }}</p>
 										<ul class="blog-tags">
-											<li><a class="autor" href="#"><i class="fa fa-user"></i> Franck851 </a></li>
-											<li><a class="date" href="#"><i class="fa fa-clock-o"></i> January 22, 2018</a></li>
-											<li><a class="delete" href="#"><i class="fa fa-trash-o"></i> Delete my post</a></li>
+											<li><a class="autor" href="#"><i class="fa fa-user"></i> {{ question.User_ID }} </a></li>
+											<li><a class="date" href="#"><i class="fa fa-clock-o"></i> {{ question.Date }}</a></li>
+											<li><a class="delete" href="/delete_question?dfsudgs={{ question.Title }}"><i class="fa fa-trash-o"></i> Delete my post</a></li>
 										</ul>
 									</div>
 								</div>
 							</div>
-							<div class="news-item">
-								<div class="row">
-									<div class="col-md-12">
-										<h2><a href="/question">Here is a question asked by this account</a></h2>
-										<p>This is the preview of the first 200 characters of a question, but ...</p>
-										<ul class="blog-tags">
-											<li><a class="autor" href="#"><i class="fa fa-user"></i> Franck851 </a></li>
-											<li><a class="date" href="#"><i class="fa fa-clock-o"></i> January 22, 2018</a></li>
-											<li><a class="delete" href="#"><i class="fa fa-trash-o"></i> Delete my post</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="news-item">
-								<div class="row">
-									<div class="col-md-12">
-										<h2><a href="/question">Here is a question asked by this account</a></h2>
-										<p>This is the preview of the first 200 characters of a question, but ...</p>
-										<ul class="blog-tags">
-											<li><a class="autor" href="#"><i class="fa fa-user"></i> Franck851 </a></li>
-											<li><a class="date" href="#"><i class="fa fa-clock-o"></i> January 22, 2018</a></li>
-											<li><a class="delete" href="#"><i class="fa fa-trash-o"></i> Delete my post</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<div class="news-item">
-								<div class="row">
-									<div class="col-md-12">
-										<h2><a href="/question">Here is a question asked by this account</a></h2>
-										<p>This is the preview of the first 200 characters of a question, but ...</p>
-										<ul class="blog-tags">
-											<li><a class="autor" href="#"><i class="fa fa-user"></i> Franck851 </a></li>
-											<li><a class="date" href="#"><i class="fa fa-clock-o"></i> January 22, 2018</a></li>
-											<li><a class="delete" href="#"><i class="fa fa-trash-o"></i> Delete my post</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							
-							<div class="news-item">
-								<div class="row">
-									<div class="col-md-12">
-										<h2><a href="/question">Here is a question asked by this account</a></h2>
-										<p>This is the preview of the first 200 characters of a question, but ...</p>
-										<ul class="blog-tags">
-											<li><a class="autor" href="#"><i class="fa fa-user"></i> Franck851 </a></li>
-											<li><a class="date" href="#"><i class="fa fa-clock-o"></i> January 22, 2018</a></li>
-											<li><a class="delete" href="#"><i class="fa fa-trash-o"></i> Delete my post</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-							<ul class="pagination-list">
-								<li><a class="active" href="#">1</a></li>
-								<li><a href="#">2</a></li>
-							</ul>
+							{% endfor %}
 						</div>
-						<div class="col-md-3 sidebar">
-							<div class="sidebar-widgets">
-								<div class="search-widget widget">
-									<form>
-										<input type="search" placeholder="Search here..."/>
-										<button type="submit">
-										<i class="fa fa-search"></i>
-										</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
 					
 				</div>
 			</div>
 		</div>
-		<!-- End content -->
-		
 		<!-- Container for the Login Modal -->
-		<!-- Don't need since we're already logged in
-		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-				<div class="modal-dialog">
-						<div class="loginmodal-container">
-								<h1>Login to Your Account</h1><br>
-									<form>
-											<input type="text" name="user" placeholder="Username">
-											<input type="password" name="pass" placeholder="Password">
-											<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-									</form>
-						</div>
+	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1>
+					<br>
+					<form action="/login_user" method="post">
+						<input type="text" name="userLogin" placeholder="Username">
+						<input type="password" name="passLogin" placeholder="Password">
+						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+					</form>
 				</div>
+			</div>
 		</div>
-		-->
 		<!-- End Login Container -->
-		
+	
 		<!-- Container for the Register Modal -->
-		<!--
-		<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-				<div class="modal-dialog">
-						<div class="loginmodal-container">
-								<h1>Sign Up</h1><br>
-									<form>
-											<input type="text" name="user" placeholder="Select Username">
-											<input type="text" name="user" placeholder="Name">
-											<input type="Password" name="pass" placeholder="Password">
-											<input type="Password" name="pass" placeholder="Choose Password Again">
-											<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
-									</form>
-						</div>
+		<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+		 style="display: none;">
+			<div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Sign Up</h1>
+					<br>
+					<form action="/create_user" method="post">
+						<input type="text" name="userRegister" placeholder="Select Username">
+						<input type="text" name="nameRegister" placeholder="Name">
+						<input type="Password" name="pass1Register" placeholder="Password">
+						<input type="Password" name="pass2Register" placeholder="Choose Password Again">
+						<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
+					</form>
 				</div>
+			</div>
 		</div>
-		-->
 		<!-- End Register Container -->
-		<!-- footer ================================================== -->
 		<footer>
 			<div class="footer-line">
 				<div class="container">

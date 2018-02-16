@@ -27,15 +27,7 @@ class Question(Base):
     Title = Column("Title", Unicode)
     Question = Column("Question", Unicode)
     Date = Column("Date", Date)
-    User_ID = Column("User_ID", Unicode, ForeignKey("User.ID"))
-
-class Q_A(Base):
-
-    __tablename__ = 'Q_A'
-
-    ID = Column(Integer, primary_key=True)
-    Question_ID = Column("Question_ID", Unicode, ForeignKey(Question.ID))
-    Answer_ID = Column("Answer_ID", Unicode, ForeignKey("Answer.ID"))
+    User_ID = Column("User_ID", Unicode)
 
 class Answer(Base):
 
@@ -45,7 +37,8 @@ class Answer(Base):
     Answer = Column("Answer", Unicode)
     Vote = Column("Vote", Integer)
     Date = Column("Date", Date)
-    User_ID = Column("User_ID", Unicode, ForeignKey("User.ID"))
+    Question_ID = Column("Question_ID", Unicode, ForeignKey("Question.ID"))
+    User_ID = Column("User_ID", Unicode)
 
 class User_Obj(object):
 
