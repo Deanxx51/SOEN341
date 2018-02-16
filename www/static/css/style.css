@@ -88,19 +88,19 @@
   border: 0px;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.1);
-  background-color: #4d90fe;
+  background-color: #fd9644;
   padding: 17px 0px;
   font-family: roboto;
   font-size: 14px;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#fd9644), to(#4787ed)); */
 }
 
 .loginmodal-submit:hover {
   /* border: 1px solid #2f5bb7; */
   border: 0px;
   text-shadow: 0 1px rgba(0,0,0,0.3);
-  background-color: #357ae8;
-  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+  background-color: #fd9644;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#fd9644), to(#fd9644)); */
 }
 
 .loginmodal-container a {
@@ -150,7 +150,7 @@
 
 .navbar {
 	margin-bottom: 0;
-    background: #fff;
+    background: #fd9644;
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -164,7 +164,7 @@
 }
 
 header.active .navbar {
-    background: rgba(255,255,255,0.9);
+    background: #fd9644;
 }
 
 .navbar-brand {
@@ -180,6 +180,7 @@ header.active .navbar-brand {
 }
 
 .navbar-default .navbar-nav {
+    background: #fd9644;
     margin: 30px 0;
     transition: all 0.17s ease-in-out;
     -moz-transition: all 0.17s ease-in-out;
@@ -222,7 +223,7 @@ header.active .navbar-default .navbar-nav {
 .navbar-default .navbar-nav > li > a.active,
 .navbar-default .navbar-nav > li > a:hover {
     color: #fff;
-    background: #0076f9;
+    background: #fd9644;
 }
 
 ul.drop-down {
@@ -348,7 +349,7 @@ ul.drop-down li:hover ul.drop-down.level3 {
 
 ul.drop-down li:hover > a {
     color: #fff;
-    border-left: 5px solid #0076f9;
+    border-left: 5px solid #fd9644;
 }
 
 /*-------------------------------------------------*/
@@ -404,7 +405,7 @@ h3:after {
     content: '';
     width: 40px;
     height: 2px;
-    background: #0076f9;
+    background: #fd9644;
     bottom: -1px;
     left: 0;
 }
@@ -457,7 +458,7 @@ a.main-button {
 
 a.main-button:hover {
     color: #fff;
-    background: #0076f9;
+    background: #fd9644;
     border: solid 1px #e8e8e8;
 }
 
@@ -519,7 +520,7 @@ body {
 }
 
 .modern_medium_fat span.opt-style2 {
-    color: #0076f9;
+    color: #fd9644;
     font-weight: 700;
 }
 
@@ -543,7 +544,7 @@ body {
     display: inline-block;
     width: 80px;
     height: 48px;
-    background: #0076f9;
+    background: #fd9644;
     margin-bottom: 36px;
     margin-top: 20px;
     transition: all 0.17s ease-in-out;
@@ -562,7 +563,7 @@ body {
     height: 0;
     border-left: 40px solid transparent;
     border-right: 40px solid transparent;
-    border-bottom: 20px solid #0076f9;
+    border-bottom: 20px solid #fd9644;
 }
 
 .services-post > a:after {
@@ -574,7 +575,7 @@ body {
     height: 0;
     border-left: 40px solid transparent;
     border-right: 40px solid transparent;
-    border-top: 20px solid #0076f9;
+    border-top: 20px solid #fd9644;
 }
 
 .services-post > a i {
@@ -727,7 +728,7 @@ a.accord-link:after {
 .carousel-control.left {
     right: 28px;
     left: auto;
-    background: #0076f9;
+    background: #fd9644;
 }
 
 .carousel-control.left:before {
@@ -742,7 +743,7 @@ a.accord-link:after {
 
 .carousel-control.right {
     right: 0;
-    background: #0076f9;
+    background: #fd9644;
 }
 
 .carousel-control.right:before {
@@ -800,7 +801,7 @@ a.accord-link:after {
 }
 
 .work-post:hover h2 {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .work-post-content span {
@@ -862,7 +863,7 @@ a.accord-link:after {
     margin-left: -10px;
     width: 0;
     height: 0;
-    border: 10px solid #0076f9;
+    border: 10px solid #fd9644;
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;
@@ -932,7 +933,7 @@ a.accord-link:after {
 .infographic-box h3 span {
     display: inline-block;
     padding: 15px;
-    background: #0076f9;
+    background: #fd9644;
     border-radius: 6px;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -951,7 +952,7 @@ a.accord-link:after {
     margin-left: -10px;
     width: 0;
     height: 0;
-    border: 10px solid #0076f9;
+    border: 10px solid #fd9644;
     border-left-color: transparent;
     border-right-color: transparent;
     border-bottom-color: transparent;
@@ -1014,7 +1015,7 @@ a.accord-link:after {
 
 .message-content h6 span {
     font-weight: 700;
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .pricing-box {
@@ -1102,7 +1103,7 @@ ul.pricing-table li a:hover {
 }
 
 .pricing-table.standard li:first-child {
-    background: #0076f9;
+    background: #fd9644;
     border: 1px solid #e9e9e9;
 }
 
@@ -1120,7 +1121,7 @@ ul.pricing-table li a:hover {
 }
 
 .pricing-table.standard li a {
-    background: #0076f9;
+    background: #fd9644;
     color: #fff;
 }
 
@@ -1138,7 +1139,7 @@ ul.pricing-table li a:hover {
 .about-us-text p span,
 .company-mission p span {
     font-weight: 700;
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .about-us-text,
@@ -1165,7 +1166,7 @@ ul.pricing-table li a:hover {
     height: 20px;  /* Can be anything */
     position: relative;
     background: #fff;
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
     margin-bottom: 8px;
     padding: 5px;
     border-radius: 5px;
@@ -1179,7 +1180,7 @@ ul.pricing-table li a:hover {
     height: 100%;
     position: relative;
     overflow: hidden;
-    background: #0076f9;
+    background: #fd9644;
     border-radius: 4px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
@@ -1190,7 +1191,7 @@ ul.pricing-table li a:hover {
     display: block;
     width: 62px;
     height: 62px;
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
     background: #fff;
     float: left;
     margin-right: 20px;
@@ -1205,7 +1206,7 @@ ul.pricing-table li a:hover {
 .company-mission > span.icon:after {
     position: absolute;
     content: 'E';
-    color: #0076f9;
+    color: #fd9644;
     font-size: 43px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -1242,11 +1243,11 @@ ul.pricing-table li a:hover {
 }
 
 .staff-post:hover .staff-post-content {
-    background: #0076f9;
+    background: #fd9644;
 }
 
 .staff-post-content h5 {
-    color: #0076f9;
+    color: #fd9644;
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 0;
@@ -1356,7 +1357,7 @@ ul.pricing-table li a:hover {
 }
 
 .staf-social li a:hover i {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .staf-social li a:hover {
@@ -1437,7 +1438,7 @@ ul.pricing-table li a:hover {
 }
 
 .main-feature-content h2 i {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .main-feature-content p {
@@ -1479,7 +1480,7 @@ ul.pricing-table li a:hover {
 }
 
 .tag-list li a i {
-    color: #0076f9;
+    color: #fd9644;
     font-size: 17px;
     margin-right: 5px;
     vertical-align: middle;
@@ -1519,7 +1520,7 @@ ul.pricing-table li a:hover {
 }
 
 .news-item h2 a:hover {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .news-item p {
@@ -1556,12 +1557,12 @@ ul.pricing-table li a:hover {
 }
 
 .blog-tags li a:hover {
-    color: #0076f9;
-    border: 1px solid #0076f9;
+    color: #fd9644;
+    border: 1px solid #fd9644;
 }
 
 .blog-tags li a i {
-    color: #0076f9;
+    color: #fd9644;
     font-size: 16px;
     margin-right: 5px;
 }
@@ -1676,7 +1677,7 @@ ul.pricing-table li a:hover {
 }
 
 .product-post:hover span {
-    background: #0076f9;
+    background: #fd9644;
 }
 
 .product-post-content {
@@ -1728,8 +1729,8 @@ ul.product-list li a {
 }
 
 ul.product-list li a:hover {
-    background: #0076f9;
-    border: 1px solid #0076f9;
+    background: #fd9644;
+    border: 1px solid #fd9644;
 }
 
 ul.product-list li a i {
@@ -1770,7 +1771,7 @@ ul.product-list li a:hover i {
 }
 
 .quote-line p span {
-    color: #0076f9;
+    color: #fd9644;
     font-weight: 600;
 }
 
@@ -1790,7 +1791,7 @@ ul.product-list li a:hover i {
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
     -o-border-radius: 6px;
-    background: #0076f9;
+    background: #fd9644;
     padding: 12px 20px;
     transition: all 0.17s ease-in-out;
     -moz-transition: all 0.17s ease-in-out;
@@ -1955,7 +1956,7 @@ ul.filter li a {
 ul.filter li a.active,
 ul.filter li a:hover {
     color: #fff;
-    background: #0076f9;
+    background: #fd9644;
 }
 
 ul.filter li a.active:after,
@@ -1966,7 +1967,7 @@ ul.filter li a:hover:after {
     left: -1px;
     bottom: -1px;
     right: -1px;
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
     z-index: 2;
     transition: all 0.17s ease-in-out;
     -moz-transition: all 0.17s ease-in-out;
@@ -2035,7 +2036,7 @@ ul.pagination-list li a {
 
 ul.pagination-list li a.active,
 ul.pagination-list li a:hover {
-    background: #0076f9;
+    background: #fd9644;
     color: #fff;
 }
 
@@ -2074,7 +2075,7 @@ ul.pagination-list li a:hover {
 }
 
 .search-widget input[type="search"]:focus {
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
 }
 
 .search-widget button {
@@ -2088,7 +2089,7 @@ ul.pagination-list li a:hover {
 }
 
 .search-widget button i {
-    color: #0076f9;
+    color: #fd9644;
     font-size: 18px;
 }
 
@@ -2150,7 +2151,7 @@ ul.tab-links li a {
 }
 
 .tabs-widget ul.tab-links li a:hover {
-    background: #0076f9;
+    background: #fd9644;
     color: #fff;
 }
 
@@ -2198,7 +2199,7 @@ ul.tab-links li a {
 }
 
 .tabs-widget .tab-content ul li h6 a:hover {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .accordion-widget {
@@ -2358,7 +2359,7 @@ ul.contact-information-list li i {
 
 #contact-form input[type="text"]:focus,
 #contact-form textarea:focus {
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
 }
 
 #contact-form textarea {
@@ -2374,7 +2375,7 @@ ul.contact-information-list li i {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     padding: 13px 20px;
-    background: #0076f9;
+    background: #fd9644;
     text-transform: uppercase;
     border: none;
     transition: all 0.2s ease-in-out;
@@ -2477,7 +2478,7 @@ ul.contact-information-list li i {
     color: #ffffff;
     font-size: 11px;
     font-family: 'Open Sans', sans-serif;
-    background: #0076f9;
+    background: #fd9644;
     text-decoration: none;
     padding: 3px 8px;
     border-radius: 5px;
@@ -2501,7 +2502,7 @@ ul.depth {
 
 .comment-form input[type="text"],
 .comment-form textarea {
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -2540,7 +2541,7 @@ ul.depth {
 }
 
 .work-staff .staff-post:hover .staff-post-content {
-    background: #0076f9;
+    background: #fd9644;
 }
 
 .client-section .clients-list {
@@ -2619,7 +2620,7 @@ ul.depth {
    width: 30px;
    height: 30px;
    text-align: center;
-   background: #0076f9;
+   background: #fd9644;
 }
 
 .top-bar .right-block i {
@@ -2648,7 +2649,7 @@ ul.depth {
     text-transform: uppercase;
     font-weight: 700;
     padding: 10px 14px;
-    background: #0076f9;
+    background: #fd9644;
 }
 
 .category-shop-list > li {
@@ -2677,7 +2678,7 @@ ul.depth {
 .category-shop-list li a.accordion-link:hover,
 .category-shop-list li a.accordion-link.active {
     color: #fff;
-    background: #0076f9;
+    background: #fd9644;
     opacity: 0.6;
 }
 
@@ -2777,11 +2778,11 @@ ul.popular-product li h6 a {
 }
 
 ul.popular-product li h6 a:hover {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 ul.popular-product li span {
-    color: #0076f9;
+    color: #fd9644;
     font-size: 13px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
@@ -2845,7 +2846,7 @@ ul.popular-product li span {
 /*-------------------------------------------------*/
 
 footer {
-    background: #1f1ffd;
+    background: #fd9644;
     border-top: 1px solid #e9e9e9;
 }
 
@@ -3009,7 +3010,7 @@ ul.tag-widget-list li a {
 
 ul.tag-widget-list li a:hover {
     border: 1px solid #fff;
-    background: #0076f9;
+    background: #fd9644;
 }
 
 ul.contact-list li {
@@ -3174,7 +3175,7 @@ ul.social-icons li a:hover {
     bottom: 0;
     z-index: 0;
     border-radius: inherit;
-    background: #0076f9;
+    background: #fd9644;
 }
 .noUi-origin-upper {
     background: inherit !important;
@@ -3282,7 +3283,7 @@ ul.social-icons li a:hover {
 }
 
 .slider-caption h1 span {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .slider-caption h6 {
@@ -3295,7 +3296,7 @@ ul.social-icons li a:hover {
 }
 
 .slider-caption h6 span {
-    color: #0076f9;
+    color: #fd9644;
 }
 
 .slider-caption p {
@@ -3315,7 +3316,7 @@ ul.social-icons li a:hover {
     font-family: 'Open Sans', sans-serif;
     padding: 15px 20px;
     background: rgba(0,0,0,0.4);
-    border: 1px solid #0076f9;
+    border: 1px solid #fd9644;
     text-transform: uppercase;
     -webkit-backface-visibility: hidden;
     border-radius: 4px;
