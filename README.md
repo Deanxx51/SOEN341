@@ -45,7 +45,7 @@ Creation of a Q&A website by use of Agile development.
 *Sprint 2: Core features implementation. Setting up testing infrastructure and continuous integration infrastructure*
 - Creating a register and login backend
 - Creating the server for the project and configure user rights for www and SQL 
-- Creating hte data structure SQL
+- Creating the data structure SQL
 - Implementing function of voting on the answers
 - Creating the body template section in PHP
 - Refactoring 
@@ -53,5 +53,9 @@ Creation of a Q&A website by use of Agile development.
 - Setting up Travis CI 
 
 *Sprint 3: More features with user feedback*
+- Create cookies and notify user when password is incorrect - Safety Issues & Error Handling
+- Accepting or rejecting answers
+- User-specific styling
+- Implement search bar
   
 *Sprint 4: Bug fixing, testing and wrap up*
