@@ -45,9 +45,10 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="/">Home</a>
 							</li>
 						</ul>
+						{% if userLog.Username == "" %}
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -58,6 +59,12 @@
 									<span class="fa fa-sign-in"></span> Login</a>
 							</li>
 						</ul>
+						{% else %}
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
+							<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+						</ul>
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -75,18 +82,17 @@
 
 						<div class="col-md-8 single-post">
 							<div class="single-post-content">
-								<h2>How do I add an issue in GitHub?</h2>
-								<p>This is the preview of the first 200 characters of a question, but when you click on the question you can see the
-									whole question.</p>
+								<h2>{{ question.Title }}</h2>
+								<p> {{ question.Question }} </p>
 
 								<ul class="blog-tags">
 									<li>
 										<a class="autor" href="#">
-											<i class="fa fa-user"></i> Franck851 </a>
+											<i class="fa fa-user"></i> {{ question.User_ID }} </a>
 									</li>
 									<li>
 										<a class="date" href="#">
-											<i class="fa fa-clock-o"></i> January 22, 2018</a>
+											<i class="fa fa-clock-o"></i> {{ question.Date }}</a>
 									</li>
 								</ul>
 							</div>
@@ -95,36 +101,36 @@
 								<h3>Answers</h3>
 
 								<ul class="comment-tree">
+									{% for answer in answers %}
 									<li>
 										<div class="comment-box">
 											<div class="comment-content">
-												<h6>singhgurdip24</h6>
-												<p>Click on "add issue" button in the issues section</p>
-											</div>
-										</div>
-										<div class="comment-box">
-											<div class="comment-content">
-												<h6>Franck851</h6>
-												<p>Works good</p>
+												<h6>{{ answer.User_ID }}</h6>
+												<p>{{ answer.Answer }}</p>
 											</div>
 										</div>
 									</li>
+									{% endfor %}
 								</ul>
 							</div>
-
+							
+							{% if userLog.Username != "" %}
 							<div class="leave-comment">
 								<h3>Answer to the question</h3>
 								<div id="div1" class="toolbar"></div>
-								<form class="comment-form">
+								<form class="comment-form" action="/add_answer" method="POST">
 									<div class="row">
 										<div class="col-md-12">
-											<div id="div2" class="text"></div>
+											<input type="hidden" value="{{ question.ID }}" name="question_id" />
+											<input type="hidden" value="{{ question.Title }}" name="Name_id" />
+											<textarea id="div2" class="text" name="inputAnswer"></textarea>
 											<input type="submit" value="Add an Answer" />
 										</div>
 
 									</div>
 								</form>
 							</div>
+							{% endif %}
 							<!-- insert editor -->
 							<script type="text/javascript">
 								var E = window.wangEditor
@@ -159,19 +165,6 @@
 								editor1.create()
 							</script>
 						</div>
-
-						<div class="col-md-3 sidebar">
-							<div class="sidebar-widgets">
-								<div class="search-widget widget">
-									<form>
-										<input type="search" placeholder="Search here..." />
-										<button type="submit">
-											<i class="fa fa-search"></i>
-										</button>
-									</form>
-								</div>
-							</div>
-						</div>
 					</div>
 
 				</div>
@@ -180,40 +173,40 @@
 		</div>
 		<!-- End content -->
 
-		<!-- Container for the Login Modal -->
-		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-			<div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1>
-					<br>
-					<form>
-						<input type="text" name="user" placeholder="Username">
-						<input type="password" name="pass" placeholder="Password">
-						<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-					</form>
-				</div>
+<!-- Container for the Login Modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Login to Your Account</h1>
+				<br>
+				<form action="/login_user" method="post">
+					<input type="text" name="userLogin" placeholder="Username">
+					<input type="password" name="passLogin" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				</form>
 			</div>
 		</div>
-		<!-- End Login Container -->
+	</div>
+	<!-- End Login Container -->
 
-		<!-- Container for the Register Modal -->
-		<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-		 style="display: none;">
-			<div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Sign Up</h1>
-					<br>
-					<form>
-						<input type="text" name="user" placeholder="Select Username">
-						<input type="text" name="user" placeholder="Name">
-						<input type="Password" name="pass" placeholder="Password">
-						<input type="Password" name="pass" placeholder="Choose Password Again">
-						<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
-					</form>
-				</div>
+	<!-- Container for the Register Modal -->
+	<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+	 style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Sign Up</h1>
+				<br>
+				<form action="/create_user" method="post">
+					<input type="text" name="userRegister" placeholder="Select Username">
+					<input type="text" name="nameRegister" placeholder="Name">
+					<input type="Password" name="pass1Register" placeholder="Password">
+					<input type="Password" name="pass2Register" placeholder="Choose Password Again">
+					<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
+				</form>
 			</div>
 		</div>
-		<!-- End Register Container -->
+	</div>
+	<!-- End Register Container -->
 
 
 		<!-- footer ================================================== -->

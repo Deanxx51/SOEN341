@@ -72,9 +72,10 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="/">Home</a>
 							</li>
 						</ul>
+						{% if userLog.Username == "" %}
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -85,6 +86,12 @@
 									<span class="fa fa-sign-in"></span> Login</a>
 							</li>
 						</ul>
+						{% else %}
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
+							<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+						</ul>
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -93,6 +100,7 @@
 
 		<!-- Container for asking questions -->
 		<div class="blog-box with-sidebar">
+			<form action="create_question" method="POST">
 			<div class="container">
 				<div class="title">
 					<label for="name">
@@ -104,7 +112,7 @@
 
 				<div class="title-area">
 					<div class="col-lg-8">
-						<input type="text" class="form-control" id="title" placeholder="write down your question">
+						<input type="text" class="form-control" id="title" name="questionTitle" placeholder="write down your question">
 					</div>
 
 				</div>
@@ -112,7 +120,7 @@
 				<div class="text-area">
 					<div id="div1" class="toolbar"></div>
 					<div class="col-lg-8">
-						<div id="div2" class="text"></div>
+						<textarea id="div2" name="questionComplete" class="text"></textarea>
 					</div>
 				</div>
 				<!-- set the configuration of editor-->
@@ -167,29 +175,12 @@
 				<br>
 				<br>
 				<br>
-				<!-- tag-->
-				<div class="tag">
-					<label for="name">
-						<h4>
-							<strong>Tag</strong>
-						</h4>
-					</label>
-				</div>
-
-				<div class="tag-area">
-					<div class="col-lg-8">
-						<input type="text" class="form-control" id="title" placeholder="classify your question">
-						<br>
-					</div>
-				</div>
-				<br>
-				<br>
-				<br>
+				
 				<div class="post">
-					<button type="button" class="btn btn-info">post your question</button>
+					<button type="submit" class="btn btn-info">post your question</button>
 				</div>
 			</div>
-
+			</form>
 		</div>
 	</div>
 </body>
@@ -198,38 +189,38 @@
 
 <!-- Container for the Login Modal -->
 <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-	<div class="modal-dialog">
-		<div class="loginmodal-container">
-			<h1>Login to Your Account</h1>
-			<br>
-			<form>
-				<input type="text" name="user" placeholder="Username">
-				<input type="password" name="pass" placeholder="Password">
-				<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-			</form>
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Login to Your Account</h1>
+				<br>
+				<form action="/login_user" method="post">
+					<input type="text" name="userLogin" placeholder="Username">
+					<input type="password" name="passLogin" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
-<!-- End Login Container -->
+	<!-- End Login Container -->
 
-<!-- Container for the Register Modal -->
-<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
- style="display: none;">
-	<div class="modal-dialog">
-		<div class="loginmodal-container">
-			<h1>Sign Up</h1>
-			<br>
-			<form>
-				<input type="text" name="user" placeholder="Select Username">
-				<input type="text" name="user" placeholder="Name">
-				<input type="Password" name="pass" placeholder="Password">
-				<input type="Password" name="pass" placeholder="Choose Password Again">
-				<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
-			</form>
+	<!-- Container for the Register Modal -->
+	<div class="modal fade" id="Register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+	 style="display: none;">
+		<div class="modal-dialog">
+			<div class="loginmodal-container">
+				<h1>Sign Up</h1>
+				<br>
+				<form action="/create_user" method="post">
+					<input type="text" name="userRegister" placeholder="Select Username">
+					<input type="text" name="nameRegister" placeholder="Name">
+					<input type="Password" name="pass1Register" placeholder="Password">
+					<input type="Password" name="pass2Register" placeholder="Choose Password Again">
+					<input type="submit" name="Sign Up" class="login loginmodal-submit" value="Sign Up">
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
-<!-- End Register Container -->
+	<!-- End Register Container -->
 
 <!-- footer ================================================== -->
 <footer>
