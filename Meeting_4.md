@@ -9,4 +9,5 @@
 **Discussion:**
 - Wrote code for preliminary backend for home feed.
 - Set up PHP XXAMP servers.
+- Starting to look into other options such as python because of connection errors.
 - Created issues, separated tasks.
