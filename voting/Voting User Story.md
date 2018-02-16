@@ -7,3 +7,6 @@ indicating that the user has voted. The total number of votes will be increased 
 
 If the user wishes to unlike the answer, the user will need to click on the voting button again to remove the vote. The button will be
 greyed out, indicating that the user has removed their vote. The total number of votes will be decreased by 1.
+  
+Related issues
+#9
