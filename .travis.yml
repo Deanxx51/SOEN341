@@ -13,7 +13,6 @@ python:
   - "nightly"
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+  - pip install unittest2
 # command to run tests
-script:
-  - pytest # or py.test for Python versions 3.5 and below
+script: python ./Test/pytest.py
