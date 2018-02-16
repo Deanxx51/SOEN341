@@ -2245,8 +2245,8 @@ fieldset[disabled] .btn-success.active {
 
 .btn-info {
   color: #ffffff;
-  background-color: #5a5aff;
-  border-color: #5a5aff;
+  background-color: #fd9644;
+  border-color: #fd9644;
 }
 
 .btn-info:hover,
@@ -4013,6 +4013,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar {
+  background: #fd9644;
   position: relative;
   z-index: 1000;
   min-height: 50px;
@@ -4432,7 +4433,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-collapse,
 .navbar-default .navbar-form {
   border-color: #e6e6e6;
-  background-color: #5a5aff;
+  background-color: #fd9644;
 }
 
 .navbar-default .navbar-nav > .dropdown > a:hover .caret,
