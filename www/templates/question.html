@@ -45,9 +45,10 @@
 					<div class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="index.html">Home</a>
+								<a href="/">Home</a>
 							</li>
 						</ul>
+						{% if userLog.Username == "" %}
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -58,6 +59,12 @@
 									<span class="fa fa-sign-in"></span> Login</a>
 							</li>
 						</ul>
+						{% else %}
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
+							<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+						</ul>
+						{% endif %}
 					</div>
 				</div>
 			</div>
@@ -75,18 +82,17 @@
 
 						<div class="col-md-8 single-post">
 							<div class="single-post-content">
-								<h2>How do I add an issue in GitHub?</h2>
-								<p>This is the preview of the first 200 characters of a question, but when you click on the question you can see the
-									whole question.</p>
+								<h2>{{ question.Title }}</h2>
+								<p> {{ question.Question }} </p>
 
 								<ul class="blog-tags">
 									<li>
 										<a class="autor" href="#">
-											<i class="fa fa-user"></i> Franck851 </a>
+											<i class="fa fa-user"></i> {{ question.User_ID }} </a>
 									</li>
 									<li>
 										<a class="date" href="#">
-											<i class="fa fa-clock-o"></i> January 22, 2018</a>
+											<i class="fa fa-clock-o"></i> {{ question.Date }}</a>
 									</li>
 								</ul>
 							</div>
@@ -98,14 +104,8 @@
 									<li>
 										<div class="comment-box">
 											<div class="comment-content">
-												<h6>singhgurdip24</h6>
-												<p>Click on "add issue" button in the issues section</p>
-											</div>
-										</div>
-										<div class="comment-box">
-											<div class="comment-content">
 												<h6>Franck851</h6>
-												<p>Works good</p>
+												<p>This is an hardcoded answer. (Backref is needed issue for sprint 3) </p>
 											</div>
 										</div>
 									</li>

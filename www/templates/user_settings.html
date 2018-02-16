@@ -80,11 +80,11 @@
 					<div class="container">
 						<div class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="/">Home</a></li>
 							</ul>
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="user_posts.html"><span class="fa fa-user"></span> Franck851's posts</a></li>
-								<li><a href="user_settings.html"><span class="fa fa-cog"></span> My settings</a></li>
+								<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}'s posts</a></li>
+								<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
 							</ul>
 						</div>
 					</div>
@@ -105,18 +105,16 @@
 							<div class="news-item">
 								<div class="row">
 									<div class="col-md-12">
-										<h2><a href="question.html"></a></h2>
+										<h2><a href="/question"></a></h2>
 									</div>
 								</div>
 							</div>
 							<div class="leave-info">
 								<h2>Please let your peers know more about yourself</h2>
-								<form class="comment-form">
+								<form class="comment-form" action="/change_name" method="POST">
 									<div class="row">
 										<div class="col-md-12">
-											First name:	<input type="text" name="firstname"><br>
-											Last name:	<input type="text" name="lastname"><br>
-											Occupation:	<input type="text" name="occupation"><br><br>
+											Full Name:<input type="text" name="nameEdit" value="{{userLog.Name}}"><br>
 											<input type="submit" value="Submit"/>
 										</div>
 
@@ -137,10 +135,10 @@
 							</div>
 							<div class="leave-interest">
 								<h2>Interests</h2>
-								<form class="comment-form">
+								<form class="comment-form" action="/edit_interest" method="POST">
 									<div class="row">
 										<div class="col-md-12">
-											<textarea placeholder="Enter your interests here"></textarea>
+											<textarea placeholder="Enter your interests here">{{ userLog.Interest }}</textarea>
 											<input type="submit" value="Submit"/>
 										</div>
 
@@ -151,9 +149,9 @@
 								<h2>Change of password</h2>
 								<form class="comment-form">
 									<div class="row">
-										<div class="col-md-12">
-											Old Password: <input type="password" name="password"><br>
-											New Password: <input type="password" name="password"><br>
+										<div class="col-md-12" action="/change_password" method="POST">
+											Old Password: <input type="password" name="oldPassword"><br>
+											New Password: <input type="password" name="newPassword"><br>
 											<input type="submit" value="Submit"/>
 										</div>
 
@@ -161,17 +159,6 @@
 								</form>
 							</div>
 							
-							<div class="news-item">
-								<div class="row">
-									<div class="col-md-12">
-										<h2>Enable Night Mode</h2>
-										<label class="switch">
-											<input type="checkbox">
-											<span class="slider round"></span>
-										</label>
-									</div>
-								</div>
-							</div>
 						</div>
 						<div class="col-md-3 sidebar">
 							<div class="sidebar-widgets">

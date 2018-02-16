@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from py.databaseModel import User, User_Obj
+from py.databaseModel import User, User_Obj, Question
 
 app = Flask(__name__)
 
@@ -12,27 +12,34 @@ _engine = create_engine("sqlite:///py/database.db", echo=True)
 _SessiomMaker = sessionmaker(bind=_engine)
 session = _SessiomMaker()
 
-userLog = None
+userLog = User_Obj("", "", "", "", "", None)
 
 @app.route("/")
 def index():
-	return render_template("index.html")
+    questions = session.query(Question).all()
+    global userLog
+    return render_template("index.html", questions=questions, userLog=userLog)
 
 @app.route("/askquestion")
 def askquestion():
     return render_template("ask_questions.html")
 
-@app.route("/question")
+@app.route("/question", methods=['GET'])
 def question():
-    return render_template("question.html")
+    title = request.args.get('title')
+    question = session.query(Question).filter_by(Title=title).first()
+    global userLog
+    return render_template("question.html", question=question, userLog=userLog)
 
 @app.route("/userpost")
 def userpost():
-    return render_template("user_posts.html")
+    global userLog
+    return render_template("user_posts.html", userLog=userLog)
 
 @app.route("/usersettings")
 def usersettings():
-    return render_template("user_settings.html")
+    global userLog
+    return render_template("user_settings.html", userLog=userLog)
 
 @app.route("/create_user", methods=['POST'])
 def create_user():
@@ -62,9 +69,10 @@ def login_user():
 
     if(user != None and password == user.Password):
 
-        userLog = User_Obj(user.ID, user.Username, user.Name, user.Password)
+        global userLog
+        userLog = User_Obj(user.ID, user.Username, user.Name, user.Password, user.Interest, None)
 
-        return redirect(url_for('usersettings'))
+        return redirect(url_for('index'))
         
 
 if(__name__ == "__main__"):
