@@ -36,7 +36,7 @@
 								<a href="/">Home</a>
 							</li>
 						</ul>
-						{% if userLog.Username == "" %}
+						{% if userLog == None %}
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -51,6 +51,7 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
 							<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+							<li><a href="/logout"><span class="fa fa-sign-out"></span> Logout</a></li>
 						</ul>
 						{% endif %}
 					</div>
@@ -64,7 +65,7 @@
 			<div class="container">
 				<div class="row">
 
-					<div class="col-md-9 blog-side one-col">
+					<div class="col-md-8 blog-side one-col">
 						{% for question in questions %}
 						<div class="news-item">
 							<div class="row">
@@ -90,7 +91,7 @@
 
 					</div>
 
-					<div class="col-md-3 sidebar">
+					<div class="col-md-4 sidebar">
 						<div class="sidebar-widgets">
 							<div class="search-widget widget">
 								<form>
@@ -100,7 +101,7 @@
 									</button>
 								</form>
 							</div>
-							{% if userLog.Username != "" %}
+							{% if userLog != None %}
 							<div class="widget">
 								<form class="comment-form" action="/askquestion">
 									<input type="submit" value="New Question"/>

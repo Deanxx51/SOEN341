@@ -82,7 +82,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="/">Home</a></li>
 							</ul>
-							{% if userLog.Username == "" %}
+							{% if userLog == None %}
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -97,6 +97,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
 								<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+								<li><a href="/logout"><span class="fa fa-sign-out"></span> Logout</a></li>
 							</ul>
 							{% endif %}
 						</div>
@@ -123,23 +124,13 @@
 								</div>
 							</div>
 							<div class="leave-info">
-								<h2>Please let your peers know more about yourself</h2>
+								<h3>Please let your peers know more about yourself</h3>
+								<br>
+								<h2>Full name</h2>
 								<form class="comment-form" action="/change_name" method="POST">
 									<div class="row">
 										<div class="col-md-12">
-											Full Name:<input type="text" name="nameEdit" value="{{userLog.Name}}"><br>
-											<input type="submit" value="Submit"/>
-										</div>
-
-									</div>
-								</form>
-							</div>
-							<div class="leave-pic">
-								<h2>Profile Picture</h2>
-								<form class="comment-form">
-									<div class="row">
-										<div class="col-md-12">
-											<br><input type="file" name="pic" accept="image/*"><br>
+											<input type="text" name="nameEdit" value="{{userLog.Name}}"><br>
 											<input type="submit" value="Submit"/>
 										</div>
 

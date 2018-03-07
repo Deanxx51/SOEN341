@@ -57,7 +57,5 @@ Creation of a Q&A website by use of Agile development.
 - Accepting or rejecting answers
 - User-specific styling
 - Implement search bar
-- Implement voting frontend and backend
-- Bug fixes to improve website useability
   
 *Sprint 4: Bug fixing, testing and wrap up*

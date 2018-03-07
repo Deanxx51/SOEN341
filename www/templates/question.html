@@ -48,7 +48,7 @@
 								<a href="/">Home</a>
 							</li>
 						</ul>
-						{% if userLog.Username == "" %}
+						{% if userLog == None %}
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -63,6 +63,7 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
 							<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+							<li><a href="/logout"><span class="fa fa-sign-out"></span> Logout</a></li>
 						</ul>
 						{% endif %}
 					</div>
@@ -114,7 +115,7 @@
 								</ul>
 							</div>
 							
-							{% if userLog.Username != "" %}
+							{% if userLog != None %}
 							<div class="leave-comment">
 								<h3>Answer to the question</h3>
 								<div id="div1" class="toolbar"></div>
