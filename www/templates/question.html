@@ -30,6 +30,50 @@
 			border: 1px solid #ccc;
 			height: 350px
 		}
+
+		.vote {
+			min-width: 46px;
+			text-align: center;
+		}
+
+		.vote-up-off, .vote-up-on, .vote-down-off, .vote-down-on {
+			text-indent: -9999em;
+    		font-size: 1px;
+    		background-image: url(static/images/sprites.svg),none;
+    		background-size: initial;
+    		background-repeat: no-repeat;
+    		overflow: hidden;
+			height: 30px;
+			cursor: pointer;
+			display: block;
+    		margin: 0 auto;
+			width: 40px;
+			/* height: 40px; */
+			margin-bottom: 2px;
+		}
+
+		.vote-up-on {
+			background-position: -40px -170px;			
+		}
+
+		.vote-up-off {
+			background-position: 0 -170px;			
+		}
+
+		.vote-down-off {
+			background-position: 0 -220px;
+		}
+		
+		.vote-down-on {
+			background-position: -40px -220px;
+		}
+
+		.vote-count-post {
+			display: block;
+    		font-size: 20px;
+    		margin: 0 0 3px;
+		}
+		
 	</style>
 </head>
 
@@ -103,8 +147,21 @@
 
 								<ul class="comment-tree">
 									{% for answer in answers %}
-									<li>
-										<div class="comment-box">
+									<li style="display: flex;">
+										<div class="comment-box" style="display: flex;">
+											<div class="vote">
+												{% if answer.hasVotedUp is not defined %}
+												<a class="vote-up-off" title="This answer is useful">up vote</a>
+												{% else %}
+												<a class="vote-up-on" title="This answer is useful">up vote</a>
+												{% endif %}
+												<span itemprop="upvoteCount" class="vote-count-post ">{{answer.voteCount}}</span>
+												{% if answer.hasVotedDown is not defined %}
+												<a class="vote-down-off" title="This answer is not useful">down vote</a>
+												{% else %}
+												<a class="vote-down-on" title="This answer is not useful">down vote</a>
+												{% endif %}
+											</div>
 											<div class="comment-content">
 												<h6>{{ answer.User_ID }}</h6>
 												<p>{{ answer.Answer }}</p>
