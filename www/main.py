@@ -58,7 +58,7 @@ def create_user():
     password = request.form.get('pass1Register')
     password2 = request.form.get('pass2Register')
 
-    if(password == password2 and username != "" and username != sessionDB.query(User).filter_by(Username=username).first().Username):
+    if(password == password2 and username != "" and 0 == sessionDB.query(User).filter_by(Username=username).count()):
         userData = User()
         userData.Username = username
         userData.Name = name
