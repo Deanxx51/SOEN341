@@ -11,8 +11,8 @@ app = Flask(__name__)
 app.secret_key = 'dsfgjs'
 
 _engine = create_engine("sqlite:///py/database.db", echo=True)
-_SessiomMaker = sessionmaker(bind=_engine)
-sessionDB = _SessiomMaker()
+_SessionMaker = sessionmaker(bind=_engine)
+sessionDB = _SessionMaker()
 
 @app.route("/")
 def index():
