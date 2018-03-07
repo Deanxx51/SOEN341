@@ -13,4 +13,3 @@
 **Discussion:**
 - Features and tasks to be implemented for Sprint 3
 - Assigning tasks to different team members 
-
