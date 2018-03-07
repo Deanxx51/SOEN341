@@ -24,7 +24,7 @@
 							<ul class="nav navbar-nav">
 								<li><a href="/">Home</a></li>
 							</ul>
-							{% if userLog.Username == "" %}
+							{% if userLog == None %}
 							<ul class="nav navbar-nav navbar-right">
 								<li>
 									<a href="#" data-toggle="modal" data-target="#Register-modal">
@@ -39,6 +39,7 @@
 							<ul class="nav navbar-nav navbar-right">
 								<li><a href="/userpost"><span class="fa fa-user"></span> {{ userLog.Username }}</a></li>
 								<li><a href="/usersettings"><span class="fa fa-cog"></span> My settings</a></li>
+								<li><a href="/logout"><span class="fa fa-sign-out"></span> Logout</a></li>
 							</ul>
 							{% endif %}
 						</div>
@@ -50,13 +51,42 @@
 			<div class="blog-box with-sidebar">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-9 blog-side one-col">
-							<div class="col-md-8 single-post">
+						<div class="col-md-12">
+							
+							
+							<div class="col-md-12">
+								<div class="single-post-content">
+									<h2> My information </h2>
+								</div>
+							</div>
+
+							<div class="row"></div>
+							<div class="news-item">
+								<div class="row">
+									<div class="col-md-12">
+										<h2>Full name</h2>
+										<h4>{{userLog.Name}}</h4>
+									</div>
+								</div>
+							</div>
+
+							<div class="news-item">
+								<div class="row">
+									<div class="col-md-12">
+										<h2>Interests</h2>
+										<h4>{{ userLog.Interest }}</h4>
+									</div>
+								</div>
+							</div>
+							
+							<br>
+
+							<div class="col-md-12">
 								<div class="single-post-content">
 									<h2> My posts </h2>
 								</div>
 							</div>
-
+							<div class="row"></div>
 							{% for question in questions %}
 							<div class="news-item">
 								<div class="row">
